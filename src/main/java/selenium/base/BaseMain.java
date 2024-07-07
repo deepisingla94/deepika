@@ -5,6 +5,7 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.support.ui.Select;
 
 public class BaseMain {
 
@@ -31,6 +32,13 @@ driver.quit();
     public static void sendKeys(String xpath,String value){
         driver.findElement(By.xpath(xpath)).sendKeys(value);
 
+
+    }
+
+    public static void selectValueFromDropdown(String xpath,int index){
+       WebElement element = driver.findElement(By.xpath(xpath));
+        Select select = new Select(element);
+        select.selectByIndex(index);
 
     }
 }
