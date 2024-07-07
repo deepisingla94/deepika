@@ -5,6 +5,7 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.ui.Select;
 
 public class BaseMain {
@@ -47,5 +48,9 @@ driver.quit();
         select.selectByValue(value );
 
     }
-
+  public static void rightClick(String xpath){
+        WebElement element =driver.findElement(By.xpath(xpath));
+      Actions actions = new Actions(driver);
+      actions.contextClick(element);
+    }
 }
