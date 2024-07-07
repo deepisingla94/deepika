@@ -48,4 +48,11 @@ driver.quit();
 
     }
 
+     public static void dragAndDrop(String xpath,String value){
+        WebElement element = driver.findElement(By.xpath(xpath));
+        Select select = new Select(element);
+        select.selectByValue(value );
+
+    }
+
 }
