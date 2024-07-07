@@ -41,4 +41,11 @@ driver.quit();
         select.selectByIndex(index);
 
     }
+    public static void selectValueFromDropdown(String xpath,String value){
+        WebElement element = driver.findElement(By.xpath(xpath));
+        Select select = new Select(element);
+        select.selectByValue(value );
+
+    }
+
 }
